@@ -28,3 +28,9 @@
 - label, hasError, helpMessage를 props로 받음
 - label, helpMessage는 React.ReactNode
 - focused의 상태를 관리해 label의 color 우선 순위 설정
+
+---
+
+> **Flex**
+
+- align, justify, direction을 props로 받음
