@@ -13,3 +13,18 @@
 - weak가 true이면 배경색과 글자색이 반대로
 - full이 true이면 width가 100%로
 - disabled가 true이면 opacity를 0.26주고 cursor를 default로
+
+---
+
+> **Input**
+
+- aria-invalid를 props로 받아 유효성 검사 표현
+
+---
+
+> **TextField**
+
+- HTMLInputElement를 상속받음
+- label, hasError, helpMessage를 props로 받음
+- label, helpMessage는 React.ReactNode
+- focused의 상태를 관리해 label의 color 우선 순위 설정
