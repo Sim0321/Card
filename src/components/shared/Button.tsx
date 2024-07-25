@@ -1,12 +1,12 @@
-import { css } from "@emotion/react";
-import styled from "@emotion/styled";
+import { css } from '@emotion/react';
+import styled from '@emotion/styled';
 import {
   ButtonColor,
   buttonColorMap,
   ButtonSize,
   buttonSizeMap,
   buttonWeakMap,
-} from "@styles/button";
+} from '@styles/button';
 
 interface ButtonProps {
   color?: ButtonColor;
@@ -18,13 +18,13 @@ interface ButtonProps {
 
 const Button = styled.button<ButtonProps>(
   {
-    cursor: "pointer",
-    fontWeight: "bold",
-    borderRadius: "6px",
+    cursor: 'pointer',
+    fontWeight: 'bold',
+    borderRadius: '6px',
   },
-  ({ color = "primary", weak }) =>
+  ({ color = 'primary', weak }) =>
     weak ? buttonWeakMap[color] : buttonColorMap[color],
-  ({ size = "small" }) => buttonSizeMap[size],
+  ({ size = 'small' }) => buttonSizeMap[size],
   ({ full }) =>
     full
       ? css`

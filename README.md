@@ -34,3 +34,15 @@
 > **Flex**
 
 - align, justify, direction을 props로 받음
+
+---
+
+> **Dimmed**
+- children을 props로 받음
+- 모달의 검정 배경 
+
+---
+
+> **Alert**
+- open, title, description, buttonlabel, onButtonClick을 props로 받음
+

@@ -3,9 +3,9 @@ import {
   forwardRef,
   InputHTMLAttributes,
   useState,
-} from "react";
-import Input from "./Input";
-import Text from "./Text";
+} from 'react';
+import Input from './Input';
+import Text from './Text';
 
 interface TextFieldProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: React.ReactNode;
@@ -23,7 +23,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
 
     // 우선 순위 : 에러 > focus > 기본
     // TODO: focus 처리
-    const labelColor = hasError ? "red" : focused ? "blue" : "grey";
+    const labelColor = hasError ? 'red' : focused ? 'blue' : 'grey';
 
     const handleFocus: FocusEventHandler<HTMLInputElement> = (event) => {
       setFocused(true);

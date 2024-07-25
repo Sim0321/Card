@@ -1,8 +1,13 @@
-import { css } from "@emotion/react";
-import { colorPalette } from "./colorPalette";
+import { css } from '@emotion/react';
+import { colorPalette } from './colorPalette';
 
 export default css`
   ${colorPalette}
+
+  :root {
+    --dimmed-zindex: 10;
+    --alert-zindex: 11;
+  }
 
   html,
   body,
@@ -121,7 +126,7 @@ export default css`
   blockquote:after,
   q:before,
   q:after {
-    content: "";
+    content: '';
     content: none;
   }
   table {

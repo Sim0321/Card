@@ -47,10 +47,10 @@
     "@types/testing-library__jest-dom": "^6.0.0",
     "craco-alias": "^3.0.1",
     "eslint": "^8.47.0",
-    "eslint-config-prettier": "^9.0.0",
+    "eslint-config-prettier": "^9.1.0",
     "eslint-config-react-app": "^7.0.1",
-    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-prettier": "^5.2.1",
     "eslint-plugin-react": "^7.33.2",
-    "prettier": "^3.0.2"
+    "prettier": "^3.3.3"
   }
 }
