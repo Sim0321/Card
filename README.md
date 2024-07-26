@@ -59,3 +59,68 @@
 > **Icon**
 
 - name, size를 props로 받음. name은 assets > icons > index.ts의 이름
+
+- 컴포넌트 합성
+
+```js
+//Cardlist.tsx
+return (
+  <div>
+    <ul>
+      {data.map((card, index) => {
+        return (
+          <ListRow
+            key={card.id}
+            contents={
+              <ListRow.Texts title={`${index + 1}위`} subTitle={card.name} />
+            }
+            right={card.payback != null ? <div>{card.payback}</div> : null}
+            withArrow={true}
+          />
+        );
+      })}
+    </ul>
+  </div>
+);
+
+// ListRow.tsx
+interface ListRowProps {
+  left?: React.ReactNode;
+  contents: React.ReactNode;
+  right?: React.ReactNode;
+  withArrow?: boolean;
+  onClick?: () => void;
+}
+
+function ListRow({ left, contents, right, withArrow, onClick }: ListRowProps) {
+  return (
+    <Flex as="li" css={listRowContainerStyles} onClick={onClick} align="center">
+      <Flex css={listRowLeftStyles}>{left}</Flex>
+      <Flex css={listRowContentStyles}>{contents}</Flex>
+      <Flex>{right}</Flex>
+      {withArrow ? <Icon name="IconRightArrow" /> : null}
+    </Flex>
+  );
+}
+
+function ListRowTexts({
+  title,
+  subTitle,
+}: {
+  title: string;
+  subTitle: string;
+}) {
+  return (
+    <Flex direction="column">
+      <Text bold={true}>{title}</Text>
+      <Text typography="t7">{subTitle}</Text>
+    </Flex>
+  );
+}
+
+ListRow.Texts = ListRowTexts; // 함수도 객체이기 때문에 가능
+
+export default ListRow;
+```
+
+- 컴포넌트 합성을 하지 않았다면 title="", subTitle="" 이런 식으로 props들이 더 많아지게 됨
