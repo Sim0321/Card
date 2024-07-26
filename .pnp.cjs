@@ -36,6 +36,7 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/react", "virtual:e6688db1f2295e4fe3d75cd48dd924fa52ad5fdccfd88f67186a42b11b7a3c2e069fadafc6ac5fd4c56f8d5c40998c85ebc4b16f84f40c4a1fe6fb7a57ace986#npm:13.4.0"],\
           ["@testing-library/user-event", "virtual:e6688db1f2295e4fe3d75cd48dd924fa52ad5fdccfd88f67186a42b11b7a3c2e069fadafc6ac5fd4c56f8d5c40998c85ebc4b16f84f40c4a1fe6fb7a57ace986#npm:13.5.0"],\
           ["@types/jest", "npm:27.5.2"],\
+          ["@types/lodash", "npm:4.17.7"],\
           ["@types/node", "npm:16.18.98"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
@@ -47,6 +48,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-prettier", "virtual:e6688db1f2295e4fe3d75cd48dd924fa52ad5fdccfd88f67186a42b11b7a3c2e069fadafc6ac5fd4c56f8d5c40998c85ebc4b16f84f40c4a1fe6fb7a57ace986#npm:5.2.1"],\
           ["eslint-plugin-react", "virtual:e6688db1f2295e4fe3d75cd48dd924fa52ad5fdccfd88f67186a42b11b7a3c2e069fadafc6ac5fd4c56f8d5c40998c85ebc4b16f84f40c4a1fe6fb7a57ace986#npm:7.34.2"],\
           ["firebase", "npm:10.12.2"],\
+          ["lodash", "npm:4.17.21"],\
           ["prettier", "npm:3.3.3"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:e6688db1f2295e4fe3d75cd48dd924fa52ad5fdccfd88f67186a42b11b7a3c2e069fadafc6ac5fd4c56f8d5c40998c85ebc4b16f84f40c4a1fe6fb7a57ace986#npm:18.3.1"],\
@@ -6634,6 +6636,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["@types/lodash", [\
+      ["npm:4.17.7", {\
+        "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-lodash-npm-4.17.7-2077805efb-10c0.zip/node_modules/@types/lodash/",\
+        "packageDependencies": [\
+          ["@types/lodash", "npm:4.17.7"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["@types/mime", [\
       ["npm:1.3.5", {\
         "packageLocation": "../../AppData/Local/Yarn/Berry/cache/@types-mime-npm-1.3.5-48d28990db-10c0.zip/node_modules/@types/mime/",\
@@ -8648,6 +8659,7 @@ const RAW_RUNTIME_STATE =
           ["@testing-library/react", "virtual:e6688db1f2295e4fe3d75cd48dd924fa52ad5fdccfd88f67186a42b11b7a3c2e069fadafc6ac5fd4c56f8d5c40998c85ebc4b16f84f40c4a1fe6fb7a57ace986#npm:13.4.0"],\
           ["@testing-library/user-event", "virtual:e6688db1f2295e4fe3d75cd48dd924fa52ad5fdccfd88f67186a42b11b7a3c2e069fadafc6ac5fd4c56f8d5c40998c85ebc4b16f84f40c4a1fe6fb7a57ace986#npm:13.5.0"],\
           ["@types/jest", "npm:27.5.2"],\
+          ["@types/lodash", "npm:4.17.7"],\
           ["@types/node", "npm:16.18.98"],\
           ["@types/react", "npm:18.3.3"],\
           ["@types/react-dom", "npm:18.3.0"],\
@@ -8659,6 +8671,7 @@ const RAW_RUNTIME_STATE =
           ["eslint-plugin-prettier", "virtual:e6688db1f2295e4fe3d75cd48dd924fa52ad5fdccfd88f67186a42b11b7a3c2e069fadafc6ac5fd4c56f8d5c40998c85ebc4b16f84f40c4a1fe6fb7a57ace986#npm:5.2.1"],\
           ["eslint-plugin-react", "virtual:e6688db1f2295e4fe3d75cd48dd924fa52ad5fdccfd88f67186a42b11b7a3c2e069fadafc6ac5fd4c56f8d5c40998c85ebc4b16f84f40c4a1fe6fb7a57ace986#npm:7.34.2"],\
           ["firebase", "npm:10.12.2"],\
+          ["lodash", "npm:4.17.21"],\
           ["prettier", "npm:3.3.3"],\
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:e6688db1f2295e4fe3d75cd48dd924fa52ad5fdccfd88f67186a42b11b7a3c2e069fadafc6ac5fd4c56f8d5c40998c85ebc4b16f84f40c4a1fe6fb7a57ace986#npm:18.3.1"],\
