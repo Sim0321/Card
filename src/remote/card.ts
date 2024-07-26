@@ -1,4 +1,4 @@
-import { AdBanner } from '@models/card';
+import { Card } from '@models/card';
 import { COLLECTIONS } from '@constants';
 import { collection, getDocs } from 'firebase/firestore';
 import { store } from './firebase';
@@ -8,6 +8,6 @@ export async function getCards() {
 
   return cardSnapshot.docs.map((doc) => ({
     id: doc.id,
-    ...(doc.data() as AdBanner),
+    ...(doc.data() as Card),
   }));
 }
