@@ -60,6 +60,10 @@
 
 - name, size를 props로 받음. name은 assets > icons > index.ts의 이름
 
+> **FixedBottomButton**
+
+-
+
 - 컴포넌트 합성
 
 ```js

@@ -4,7 +4,11 @@ import { useParams } from 'react-router-dom';
 import { getCard } from '@remote/card';
 import Top from '@components/shared/Top';
 import ListRow from '@components/shared/ListRow';
-import Icon from '@/components/shared/Icon';
+import Icon from '@components/shared/Icon';
+import FixedBottomButton from '@components/shared/FixedBottomButton';
+import Flex from '@components/shared/Flex';
+import Text from '@components/shared/Text';
+import { css } from '@emotion/react';
 
 function CardPage() {
   const { id = '' } = useParams();
@@ -39,6 +43,15 @@ function CardPage() {
           );
         })}
       </ul>
+
+      {promotion != null ? (
+        <Flex direction="column" css={termsContainerStyles}>
+          <Text bold={true}>유의사항</Text>
+          <Text typography="t7">{removeHtmlTags(promotion.terms)}</Text>
+        </Flex>
+      ) : null}
+
+      <FixedBottomButton label="신청하기" onClick={() => {}} />
     </div>
   );
 }
@@ -61,5 +74,10 @@ function removeHtmlTags(text: string) {
 
   return output;
 }
+
+const termsContainerStyles = css`
+  margin-top: 80px;
+  padding: 0 24px 80px;
+`;
 
 export default CardPage;
