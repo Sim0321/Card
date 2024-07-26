@@ -134,6 +134,8 @@ export default css`
     border-spacing: 0;
   }
 
+  /* button tag reset */
+
   button {
     border: none;
     margin: 0;
@@ -144,5 +146,11 @@ export default css`
     color: inherit;
     font: inherit;
     line-height: normal;
+  }
+
+  /* a tag reset */
+  a {
+    color: inherit;
+    text-decoration: inherit;
   }
 `;

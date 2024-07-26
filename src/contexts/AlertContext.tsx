@@ -32,7 +32,7 @@ export function AlertContextProvider({
 }) {
   const [alertState, setAlertState] = useState(defaultValues);
 
-  console.log('alertState ::', alertState);
+  // console.log('alertState ::', alertState);
 
   // portal로 띄우기
   const $portal_root = document.getElementById('root-portal');
