@@ -3,10 +3,12 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"],
-      "@components/*": ["src/components/*"],
       "@styles/*": ["src/styles/*"],
+      "@components/*": ["src/components/*"],
       "@shared/*": ["src/components/shared/*"],
-      "@contexts/*": ["src/contexts/*"]
+      "@contexts/*": ["src/contexts/*"],
+      "@models/*": ["src/models/*"],
+      "@pages/*": ["src/pages/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true
