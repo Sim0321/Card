@@ -62,7 +62,7 @@
 
 > **FixedBottomButton**
 
--
+- label, onClick을 props로 받음
 
 - 컴포넌트 합성
 
