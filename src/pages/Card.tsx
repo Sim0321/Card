@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { getCard } from '@remote/card';
 import Top from '@components/shared/Top';
 import ListRow from '@components/shared/ListRow';
+import Icon from '@/components/shared/Icon';
 
 function CardPage() {
   const { id = '' } = useParams();
@@ -29,7 +30,8 @@ function CardPage() {
         {benefit.map((text, index) => {
           return (
             <ListRow
-              key={text}
+              key={index}
+              left={<Icon name="IconCheck" size={20} />}
               contents={
                 <ListRow.Texts title={`혜택 ${index + 1}`} subTitle={text} />
               }
