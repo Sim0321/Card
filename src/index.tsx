@@ -11,12 +11,13 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement,
 );
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode></React.StrictMode>,
+  <>
     <Global styles={globalStyles} />
     <AlertContextProvider>
       <App />
     </AlertContextProvider>
-  </React.StrictMode>,
+  </>,
 );
 
 reportWebVitals();

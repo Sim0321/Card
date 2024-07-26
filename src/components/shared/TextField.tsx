@@ -18,7 +18,6 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
     { label, hasError, helpMessage, onFocus, onBlur, ...props },
     ref,
   ) {
-    console.log(ref);
     const [focused, setFocused] = useState(false);
 
     // 우선 순위 : 에러 > focus > 기본

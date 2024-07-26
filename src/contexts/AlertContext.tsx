@@ -47,7 +47,6 @@ export function AlertContextProvider({
   /** 모달 open */
   const open = useCallback(
     ({ onButtonClick, ...options }: AlertOptions) => {
-      console.log('여기 들어옴');
       setAlertState({
         ...options,
         open: true,

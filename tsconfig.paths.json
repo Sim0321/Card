@@ -8,7 +8,9 @@
       "@shared/*": ["src/components/shared/*"],
       "@contexts/*": ["src/contexts/*"],
       "@models/*": ["src/models/*"],
-      "@pages/*": ["src/pages/*"]
+      "@pages/*": ["src/pages/*"],
+      "@remote/*": ["src/remote/*"],
+      "@constants": ["src/constants/index.ts"]
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true
