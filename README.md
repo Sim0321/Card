@@ -51,4 +51,7 @@
 > **Top**
 
 - title, subtitle을 props로 받음
--
+
+> **ListRow**
+
+- left,contents, right, withArrow, onClick을 props로 받음
