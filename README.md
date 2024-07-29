@@ -133,3 +133,7 @@ export default ListRow;
 
 - keyFrame(css)
 - framer-motion
+
+> SPA의 스크롤 문제(다른 페이지에서 스크롤이 하단으로 갔다가 또 다른 페이지 가면 스크롤이 하단에 위치한 이슈)
+
+-
