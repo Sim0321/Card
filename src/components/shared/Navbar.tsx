@@ -19,7 +19,7 @@ function Navbar() {
 
   const handleLogout = useCallback(() => {
     signOut(auth);
-    navigate('/signin');
+    // navigate('/signin');
   }, []);
 
   const renderButton = useCallback(() => {
