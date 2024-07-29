@@ -54,7 +54,7 @@
 
 > **ListRow**
 
-- left,contents, right, withArrow, onClick을 props로 받음
+- left,contents, right, withArrow, onClick, as를 props로 받음
 
 > **Icon**
 
@@ -64,7 +64,7 @@
 
 - label, onClick을 props로 받음
 
-- 컴포넌트 합성
+> 컴포넌트 합성
 
 ```js
 //Cardlist.tsx
@@ -128,3 +128,8 @@ export default ListRow;
 ```
 
 - 컴포넌트 합성을 하지 않았다면 title="", subTitle="" 이런 식으로 props들이 더 많아지게 됨
+
+> animation
+
+- keyFrame(css)
+- framer-motion

@@ -45,7 +45,7 @@ function CardList() {
   const cards = flatten(data?.pages.map(({ items }) => items));
 
   return (
-    <div>
+    <div style={{ cursor: 'pointer' }}>
       <InfiniteScroll
         dataLength={cards.length}
         hasMore={hasNextPage}

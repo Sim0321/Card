@@ -1,5 +1,7 @@
 import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
+import { css } from '@emotion/react';
+import { motion } from 'framer-motion';
 
 import { getCard } from '@remote/card';
 import Top from '@components/shared/Top';
@@ -8,7 +10,6 @@ import Icon from '@components/shared/Icon';
 import FixedBottomButton from '@components/shared/FixedBottomButton';
 import Flex from '@components/shared/Flex';
 import Text from '@components/shared/Text';
-import { css } from '@emotion/react';
 
 function CardPage() {
   const { id = '' } = useParams();
@@ -20,11 +21,11 @@ function CardPage() {
   if (data == null) {
     return null;
   }
-  console.log(data);
+  // console.log(data);
   const { name, corpName, tags, promotion, benefit } = data;
 
   const subTitle =
-    promotion != null ? removeHtmlTags(promotion?.title) : tags.join(', ');
+    promotion != null ? removeHtmlTags(promotion?.title) : tags?.join(', ');
 
   return (
     <div>
@@ -33,13 +34,35 @@ function CardPage() {
       <ul>
         {benefit.map((text, index) => {
           return (
-            <ListRow
-              key={index}
-              left={<Icon name="IconCheck" size={20} />}
-              contents={
-                <ListRow.Texts title={`혜택 ${index + 1}`} subTitle={text} />
-              }
-            />
+            <motion.li
+              initial={{
+                opacity: 0,
+                translateX: -90,
+              }}
+              // whileInView={{
+              //   opacity: 1,
+              //   translateX: 0,
+              // }}
+              transition={{
+                duration: 0.7,
+                // ease: [0.25, 0.1, 0.25, 0.1],
+                ease: 'easeInOut',
+                delay: index * 0.1,
+              }}
+              animate={{
+                opacity: 1,
+                translateX: 0,
+              }}
+            >
+              <ListRow
+                as="div"
+                key={text}
+                left={<Icon name="IconCheck" size={20} />}
+                contents={
+                  <ListRow.Texts title={`혜택 ${index + 1}`} subTitle={text} />
+                }
+              />
+            </motion.li>
           );
         })}
       </ul>
