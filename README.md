@@ -158,3 +158,8 @@ export default ListRow;
 > AuthGuard
 
 - 인증 처리가 된지 안된지 분기처리(전역상태로 관리)
+
+> router 인증 분기처리
+
+- 인증이 필요한 페이지와 필요하지 않은 페이지를 PrivateRoute로 분기 처리, 인증이 되어 있지 않으면 로그인페이지로
+- useLocation의 state를 이용해 로그인을 한 후에 마지막에 있던 페이지로 이동

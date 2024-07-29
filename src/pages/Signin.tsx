@@ -11,7 +11,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 function SigninPage() {
   const { open } = useAlertContext();
   const location = useLocation();
-  console.log(location);
 
   const navigate = useNavigate();
 
