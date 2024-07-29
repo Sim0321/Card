@@ -142,3 +142,15 @@ export default ListRow;
 
 - input에 margin을 주는 것은 비효율적. 유동적인 컴포넌트한테 주는 것이 보다 효율적
 - 그러므로 Spacing 컴포넌트 생성(기본 vertical), height와 width로 분기
+
+> Controlled VS UnControlled
+
+- 값을 어떻게 관리할 것인가로 구분
+- Controlled -> state
+- UnControlled -> dom에 직접적 접근(ref)
+
+> 유효성 라이브러리
+
+- validator 사용
+- 맨 처음 진입시 에러메세지
+- input에서 focus가 벗어나거나, submit 버튼을 눌렀을 때만 나타나게 하기(dirty로 상태관리)
