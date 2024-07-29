@@ -35,6 +35,7 @@ function CardPage() {
         {benefit.map((text, index) => {
           return (
             <motion.li
+              key={text}
               initial={{
                 opacity: 0,
                 translateX: -90,
@@ -56,7 +57,6 @@ function CardPage() {
             >
               <ListRow
                 as="div"
-                key={text}
                 left={<Icon name="IconCheck" size={20} />}
                 contents={
                   <ListRow.Texts title={`혜택 ${index + 1}`} subTitle={text} />

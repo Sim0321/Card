@@ -6,20 +6,20 @@ import { FormValues } from '@models/signin';
 import { auth } from '@remote/firebase';
 import Form from '@components/signin/Form';
 import { useAlertContext } from '@contexts/AlertContext';
+import { useNavigate } from 'react-router-dom';
 
 function SigninPage() {
   const { open } = useAlertContext();
+
+  const navigate = useNavigate();
+
   const handleSubmit = useCallback(
     async (formValues: FormValues) => {
       const { email, password } = formValues;
 
       try {
-        const response = await signInWithEmailAndPassword(
-          auth,
-          email,
-          password,
-        );
-        console.log('res ::', response);
+        await signInWithEmailAndPassword(auth, email, password);
+        navigate('/');
       } catch (e) {
         // firebase의 error인지 네트워크의 error인지 구분
         if (e instanceof FirebaseError) {

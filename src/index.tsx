@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
+import './index.css';
+import ReactDOM from 'react-dom/client';
+import { RecoilRoot } from 'recoil';
 import reportWebVitals from './reportWebVitals';
-import { Global } from '@emotion/react';
-import globalStyles from './styles/globalStyles';
-import { AlertContextProvider } from '@contexts/AlertContext';
 import { QueryClient, QueryClientProvider } from 'react-query';
+
+import { Global } from '@emotion/react';
+import globalStyles from '@styles/globalStyles';
+import { AlertContextProvider } from '@contexts/AlertContext';
 import AuthGuard from '@components/auth/AuthGuard';
 
 const client = new QueryClient({
@@ -20,13 +21,15 @@ root.render(
   // <React.StrictMode></React.StrictMode>,
   <>
     <Global styles={globalStyles} />
-    <QueryClientProvider client={client}>
-      <AlertContextProvider>
-        <AuthGuard>
-          <App />
-        </AuthGuard>
-      </AlertContextProvider>
-    </QueryClientProvider>
+    <RecoilRoot>
+      <QueryClientProvider client={client}>
+        <AlertContextProvider>
+          <AuthGuard>
+            <App />
+          </AuthGuard>
+        </AlertContextProvider>
+      </QueryClientProvider>
+    </RecoilRoot>
   </>,
 );
 

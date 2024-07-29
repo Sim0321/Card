@@ -5,8 +5,10 @@ import { FormValues } from '@models/signup';
 import Form from '@components/signup/Form';
 import { auth, store } from '@remote/firebase';
 import { COLLECTIONS } from '@constants';
+import { useNavigate } from 'react-router-dom';
 
 function SignupPage() {
+  const navigate = useNavigate();
   // 여기서 회원가입을 처리하는 이유는 만약 회원가입까지 하는 로직이 Form 컴포넌트 안에 작성하게 된다면 컴포넌트의 역할이 너무 많아지기 때문
   const handleSubmit = async (formValues: FormValues) => {
     const { email, password, name } = formValues;
@@ -29,9 +31,7 @@ function SignupPage() {
     };
 
     await setDoc(doc(collection(store, COLLECTIONS.USER), user.uid), newUser);
-    //TODO:로그인
-
-    console.log('user :', user);
+    navigate('/');
   };
   return (
     <div>
