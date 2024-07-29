@@ -62,7 +62,7 @@
 
 > **FixedBottomButton**
 
-- label, onClick을 props로 받음
+- label, onClick, disabled를 props로 받음
 
 > 컴포넌트 합성
 
@@ -136,4 +136,9 @@ export default ListRow;
 
 > SPA의 스크롤 문제(다른 페이지에서 스크롤이 하단으로 갔다가 또 다른 페이지 가면 스크롤이 하단에 위치한 이슈)
 
--
+- ScrollToTop 컴포넌트 생생해 router 위에 배치
+
+> TextField input marginBottom
+
+- input에 margin을 주는 것은 비효율적. 유동적인 컴포넌트한테 주는 것이 보다 효율적
+- 그러므로 Spacing 컴포넌트 생성(기본 vertical), height와 width로 분기
