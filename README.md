@@ -154,3 +154,7 @@ export default ListRow;
 - validator 사용
 - 맨 처음 진입시 에러메세지
 - input에서 focus가 벗어나거나, submit 버튼을 눌렀을 때만 나타나게 하기(dirty로 상태관리)
+
+> AuthGuard
+
+- 인증 처리가 된지 안된지 분기처리(전역상태로 관리)
