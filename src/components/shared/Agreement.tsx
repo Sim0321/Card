@@ -73,13 +73,3 @@ const agreementContainerStyles = css`
 `;
 
 export default Agreement;
-
-/**
- * <Agreement>
- *  <Agreement.Title>약관 모두 동의</Agreement.Title>
- *  <Agreement.Description>약관1</Agreement.Description>
- *  <Agreement.Description>약관2</Agreement.Description>
- * </Agreement>
- *
- * Title 부분에 label이라는 props로 넘겨줄 수 있지만 children으로 넘겨서 태그로도 받을 수 있게 확장성 고려
- */

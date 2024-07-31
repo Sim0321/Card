@@ -174,3 +174,19 @@ export default ListRow;
   - 단일 페이지(주로 예약페이지에 많이 사용), 데이터가 페이지 하나에 다 담겨져 있음. step별로 데이터를 부모(페이지)로 넘겨주는 방식
   - 장점 : 어떤 데이터가 변화하는지 추적하기 용이하고 각 컴포넌트에 필요한 데이터를 관리하기 용이
   - 단점 : 컴포넌트를 여러개 만들어야한다는 번거로움이 있음.
+
+> Agreement
+
+- 큰 틀로는 Agreement를 하고
+- title을 작성하는 부분을 AgreementTitle
+- description을 작성하는 부분을 AgreementDescription으로 생성
+
+```js
+<Agreement>
+  <Agreement.Title>약관 모두 동의</Agreement.Title>
+  <Agreement.Description>약관1</Agreement.Description>
+  <Agreement.Description>약관2</Agreement.Description>
+</Agreement>
+```
+
+- Title 부분에 label이라는 props로 넘겨줄 수 있지만 children으로 넘겨서 태그로도 받을 수 있게 확장성 고려
