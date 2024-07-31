@@ -190,3 +190,18 @@ export default ListRow;
 ```
 
 - Title 부분에 label이라는 props로 넘겨줄 수 있지만 children으로 넘겨서 태그로도 받을 수 있게 확장성 고려
+
+```js
+const [termsAgreements, setTermsAgreements] = useState(() => {
+    return 약관목록.reduce<Record<string, boolean>>(
+      (prev, term) => ({
+        ...prev,
+        [term.id]: false,
+      }),
+      {},
+    );
+  });
+```
+
+- useState에서 reduce를 이용해 초기값을 설정
+- 원하는 데이터가 `{01: false, 02: false}`이거고 checked를 `termsAgreements[id]`로 표현하기 위해
