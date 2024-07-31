@@ -7,11 +7,40 @@ import { APPLY_STATUS } from '@/models/apply';
 import useUser from '@/hooks/auth/useUser';
 import { useNavigate, useParams } from 'react-router-dom';
 import { updateApplyCard } from '@/remote/apply';
+import useAppliedCard from '@/hooks/apply/useAppliedCard';
+import { useAlertContext } from '@/contexts/AlertContext';
 
 const ApplyPage = () => {
   const [readyToPoll, setReadyToPoll] = useState(false);
   const user = useUser();
   const { id } = useParams() as { id: string };
+  const { open } = useAlertContext();
+
+  const { data } = useAppliedCard({
+    userId: user?.uid as string,
+    cardId: id,
+    options: {
+      onSuccess: (applied) => {
+        if (applied == null) {
+          return;
+        }
+
+        if (applied.status === APPLY_STATUS.COMPLETE) {
+          open({
+            title: '이미 발급이 완료된 카드입니다',
+            onButtonClick: () => {
+              window.history.back();
+            },
+          });
+          return;
+        }
+
+        setReadyToPoll(true);
+      },
+      onError: () => {},
+      suspense: true,
+    },
+  });
 
   const navigate = useNavigate();
 
@@ -53,6 +82,10 @@ const ApplyPage = () => {
       window.history.back();
     },
   });
+
+  if (data != null && data.status === APPLY_STATUS.COMPLETE) {
+    return null;
+  }
 
   if (readyToPoll || isLoading) {
     return <div>Loading ...</div>;

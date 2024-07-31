@@ -9,6 +9,7 @@ import ScrollToTop from '@components/shared/ScrollToTop';
 import Navbar from '@shared/Navbar';
 import PrivateRoute from '@components/auth/PrivateRoute';
 import ApplyDone from './pages/ApplyDone';
+import { Suspense } from 'react';
 
 function App() {
   return (
@@ -24,7 +25,9 @@ function App() {
           path="/apply/:id"
           element={
             <PrivateRoute>
-              <ApplyPage />
+              <Suspense fallback={<></>}>
+                <ApplyPage />
+              </Suspense>
             </PrivateRoute>
           }
         />
