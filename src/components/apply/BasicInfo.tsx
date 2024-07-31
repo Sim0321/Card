@@ -1,5 +1,5 @@
 // 기본정보
-import React, { ChangeEvent, useCallback, useState } from 'react';
+import { ChangeEvent, useCallback, useState } from 'react';
 import Select from '@shared/Select';
 import { 연소득옵션, 신용점수옵션, 결제일옵션 } from '@constants/apply';
 import { ApplyValues } from '@models/apply';

@@ -12,6 +12,7 @@ const Flex = styled.div<FlexProps>(({ align, justify, direction }) => ({
   alignItems: align,
   justifyContent: justify,
   flexDirection: direction,
+  // flexWrap, gap 추가
 }));
 
 export default Flex;

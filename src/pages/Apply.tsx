@@ -5,7 +5,7 @@ import BasicInfo from '@components/apply/BasicInfo';
 import { ApplyValues } from '@/models/apply';
 
 const Apply = () => {
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState(2);
 
   // Pick으로 뽑아오면 객체로 뽑힘
   const handleTermsChange = (terms: ApplyValues['terms']) => {
