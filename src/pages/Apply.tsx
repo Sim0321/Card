@@ -4,7 +4,7 @@ import CardInfo from '@components/apply/CardInfo';
 import BasicInfo from '@components/apply/BasicInfo';
 
 const Apply = () => {
-  const [step, setStep] = useState(0);
+  const [step, setStep] = useState(1);
 
   const handleTermsChange = (terms: string[]) => {
     console.log('terms ::', terms);

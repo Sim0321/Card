@@ -37,6 +37,7 @@ const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
       <div>
         {label ? (
           <Text
+            color={labelColor}
             typography="t7"
             display="inline-block"
             style={{ marginBottom: 6 }}
