@@ -38,7 +38,7 @@ function Navbar() {
     return null;
   }, [user, showSignButton, handleLogout]);
 
-  console.log('user', user);
+  // console.log('user', user);
 
   return (
     <Flex css={navbarContainerStyles} justify="space-between" align="center">
