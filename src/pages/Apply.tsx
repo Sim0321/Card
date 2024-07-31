@@ -6,9 +6,13 @@ import BasicInfo from '@components/apply/BasicInfo';
 const Apply = () => {
   const [step, setStep] = useState(0);
 
+  const handleTermsChange = (terms: string[]) => {
+    console.log('terms ::', terms);
+  };
+
   return (
     <div>
-      {step === 0 && <Terms />}
+      {step === 0 && <Terms onNext={handleTermsChange} />}
       {step === 1 && <BasicInfo />}
       {step === 2 && <CardInfo />}
     </div>
