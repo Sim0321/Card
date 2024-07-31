@@ -3,9 +3,14 @@ import { MouseEvent, useCallback, useState } from 'react';
 
 import Agreement from '@shared/Agreement';
 import { 약관목록 } from '@constants/apply';
-import FixedBottomButton from '../shared/FixedBottomButton';
+import FixedBottomButton from '@shared/FixedBottomButton';
+import { ApplyValues } from '@models/apply';
 
-const Terms = ({ onNext }: { onNext: (terms: string[]) => void }) => {
+const Terms = ({
+  onNext,
+}: {
+  onNext: (terms: ApplyValues['terms']) => void;
+}) => {
   const [termsAgreements, setTermsAgreements] = useState(() => {
     return 약관목록.reduce<Record<string, boolean>>(
       (prev, term) => ({

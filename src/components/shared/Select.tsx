@@ -19,6 +19,7 @@ const BaseSelect = styled.select`
   border-radius: 16px;
   padding: 0 15px;
   cursor: pointer;
+  outline: none;
 
   &:required:invalid {
     color: #c0c4c7;
