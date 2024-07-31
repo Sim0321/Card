@@ -24,7 +24,7 @@ const ApplyPage = () => {
         userId: user?.uid as string,
         cardId: id,
       });
-      navigate(`/apply/done?success=true`);
+      navigate(`/apply/done?success=true`, { replace: true });
     },
 
     onError: async () => {
@@ -35,7 +35,9 @@ const ApplyPage = () => {
         userId: user?.uid as string,
         cardId: id,
       });
-      navigate(`/apply/done?success=false`);
+      navigate(`/apply/done?success=false`, {
+        replace: true,
+      });
     },
     enabled: readyToPoll,
   });
