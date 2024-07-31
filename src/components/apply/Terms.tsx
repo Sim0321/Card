@@ -32,7 +32,12 @@ const Terms = () => {
             key={id}
             checked={termsAgreements[id]}
             link={link}
-            onChange={() => {}}
+            onChange={(_, checked) => {
+              setTermsAgreements((prevTerms) => ({
+                ...prevTerms,
+                [id]: checked,
+              }));
+            }}
           >
             {title}
           </Agreement.Description>
