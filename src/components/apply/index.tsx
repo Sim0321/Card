@@ -14,10 +14,10 @@ const Apply = ({
   const user = useUser();
   const { id } = useParams() as { id: string };
 
-  const [step, setStep] = useState(0);
   const [applyValues, setApplyValues] = useState<Partial<ApplyValues>>({
     userId: user?.uid,
     cardId: id,
+    step: 0,
   });
 
   // Pick으로 뽑아오면 객체로 뽑힘
@@ -26,9 +26,8 @@ const Apply = ({
     setApplyValues((prevValues) => ({
       ...prevValues,
       terms,
+      step: (prevValues.step as number) + 1,
     }));
-
-    setStep((prevStep) => prevStep + 1);
   };
 
   const handleBasicInfoChange = (
@@ -38,9 +37,8 @@ const Apply = ({
     setApplyValues((prevValues) => ({
       ...prevValues,
       ...infoValues,
+      step: (prevValues.step as number) + 1,
     }));
-
-    setStep((prevStep) => prevStep + 1);
   };
 
   const handleCardInfoChange = (
@@ -50,26 +48,25 @@ const Apply = ({
     setApplyValues((prevValues) => ({
       ...prevValues,
       ...cardInfoValues,
+      step: (prevValues.step as number) + 1,
     }));
-
-    setStep((prevStep) => prevStep + 1);
   };
 
   useEffect(() => {
-    if (step === 3) {
+    if (applyValues.step === 3) {
       onSubmit({
         ...applyValues,
         appliedAt: new Date(),
         status: APPLY_STATUS.READY,
       } as ApplyValues);
     }
-  }, [applyValues, step, onSubmit]);
+  }, [applyValues, onSubmit]);
 
   return (
     <div>
-      {step === 0 && <Terms onNext={handleTermsChange} />}
-      {step === 1 && <BasicInfo onNext={handleBasicInfoChange} />}
-      {step === 2 && <CardInfo onNext={handleCardInfoChange} />}
+      {applyValues.step === 0 && <Terms onNext={handleTermsChange} />}
+      {applyValues.step === 1 && <BasicInfo onNext={handleBasicInfoChange} />}
+      {applyValues.step === 2 && <CardInfo onNext={handleCardInfoChange} />}
     </div>
   );
 };
