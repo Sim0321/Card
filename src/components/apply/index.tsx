@@ -14,11 +14,24 @@ const Apply = ({
   const user = useUser();
   const { id } = useParams() as { id: string };
 
-  const [applyValues, setApplyValues] = useState<Partial<ApplyValues>>({
-    userId: user?.uid,
-    cardId: id,
-    step: 0,
-  });
+  const storageKey = `applied-${user?.uid}-${id}`;
+
+  // 지연 초기화
+  const [applyValues, setApplyValues] = useState<Partial<ApplyValues>>(
+    () => {
+      const applied = localStorage.getItem(storageKey);
+
+      if (applied == null) {
+        return {
+          userId: user?.uid,
+          cardId: id,
+          step: 0,
+        };
+      }
+
+      return JSON.parse(applied);
+    }, // useState에 콜백함수를 넣으면 리렌더링이 되더라도 최초에 단 한번만 실행이 된다
+  );
 
   // Pick으로 뽑아오면 객체로 뽑힘
   const handleTermsChange = (terms: ApplyValues['terms']) => {
@@ -54,13 +67,17 @@ const Apply = ({
 
   useEffect(() => {
     if (applyValues.step === 3) {
+      localStorage.removeItem(storageKey);
+
       onSubmit({
         ...applyValues,
         appliedAt: new Date(),
         status: APPLY_STATUS.READY,
       } as ApplyValues);
+    } else {
+      localStorage.setItem(storageKey, JSON.stringify(applyValues));
     }
-  }, [applyValues, onSubmit]);
+  }, [applyValues, onSubmit, storageKey]);
 
   return (
     <div>
