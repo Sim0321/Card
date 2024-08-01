@@ -9,6 +9,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { updateApplyCard } from '@/remote/apply';
 import useAppliedCard from '@/hooks/apply/useAppliedCard';
 import { useAlertContext } from '@/contexts/AlertContext';
+import FullPageLoader from '@/components/shared/FullPageLoader';
 
 const ApplyPage = () => {
   const [readyToPoll, setReadyToPoll] = useState(false);
@@ -88,7 +89,7 @@ const ApplyPage = () => {
   }
 
   if (readyToPoll || isLoading) {
-    return <div>Loading ...</div>;
+    return <FullPageLoader message="카드를 신청중입니다." />;
   }
   return <Apply onSubmit={mutate} />;
 };
