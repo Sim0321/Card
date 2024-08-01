@@ -33,6 +33,7 @@ const ApplyPage = () => {
               window.history.back();
             },
           });
+          localStorage.removeItem(`applied-${user?.uid}-${id}`);
           return;
         }
 
