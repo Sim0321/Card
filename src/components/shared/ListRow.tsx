@@ -1,6 +1,9 @@
 import { css } from '@emotion/react';
+import React from 'react';
 import Flex from './Flex';
 import Icon from './Icon';
+import Skeleton from './Skeleton';
+import Spacing from './Spacing';
 import Text from './Text';
 
 interface ListRowProps {
@@ -30,12 +33,32 @@ function ListRow({
   );
 }
 
+function ListRowSkeleton() {
+  return (
+    <Flex as="li" css={listRowContainerStyles} align="center">
+      <Flex css={listRowLeftStyles}></Flex>
+      <Flex css={listRowContentStyles}>
+        <ListRow.Texts
+          title={
+            <>
+              <Skeleton width={67} height={23} />
+              <Spacing size={2} />
+            </>
+          }
+          subTitle={<Skeleton width={85} height={20} />}
+        />
+      </Flex>
+      <Icon name="IconRightArrow" />
+    </Flex>
+  );
+}
+
 function ListRowTexts({
   title,
   subTitle,
 }: {
-  title: string;
-  subTitle: string;
+  title: React.ReactNode;
+  subTitle: React.ReactNode;
 }) {
   return (
     <Flex direction="column">
@@ -58,5 +81,6 @@ const listRowContentStyles = css`
 `;
 
 ListRow.Texts = ListRowTexts; // 함수도 객체이기 때문에 가능
+ListRow.Skeleton = ListRowSkeleton;
 
 export default ListRow;

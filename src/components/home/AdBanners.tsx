@@ -12,8 +12,18 @@ import { getAdBanners } from '@remote/adBanner';
 import 'swiper/css';
 
 const AdBanners = () => {
-  const { data } = useQuery(['adBanners'], () => getAdBanners());
-  // console.log('adBanners ::', data);
+  const { data, isLoading } = useQuery(['adBanners'], () => getAdBanners());
+
+  if (data == null || isLoading) {
+    return (
+      <Container>
+        <Flex direction="column" css={bannerContainerStyles}>
+          <Text bold={true}>&nbsp;</Text>
+          <Text typography="t7">&nbsp;</Text>
+        </Flex>
+      </Container>
+    );
+  }
 
   return (
     <Container>
@@ -21,12 +31,12 @@ const AdBanners = () => {
         {data?.map((banner) => {
           return (
             <SwiperSlide key={banner.id}>
-              {/* <Link to={banner.link}> */}
-              <Flex direction="column" css={bannerContainerStyles}>
-                <Text bold={true}>{banner.title}</Text>
-                <Text typography="t7">{banner.description}</Text>
-              </Flex>
-              {/* </Link> */}
+              <Link to={banner.link}>
+                <Flex direction="column" css={bannerContainerStyles}>
+                  <Text bold={true}>{banner.title}</Text>
+                  <Text typography="t7">{banner.description}</Text>
+                </Flex>
+              </Link>
             </SwiperSlide>
           );
         })}

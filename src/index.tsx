@@ -9,6 +9,7 @@ import { Global } from '@emotion/react';
 import globalStyles from '@styles/globalStyles';
 import { AlertContextProvider } from '@contexts/AlertContext';
 import AuthGuard from '@components/auth/AuthGuard';
+import React from 'react';
 
 const client = new QueryClient({
   defaultOptions: {},
@@ -19,7 +20,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   // <React.StrictMode></React.StrictMode>,
-  <>
+  <React.StrictMode>
     <Global styles={globalStyles} />
     <RecoilRoot>
       <QueryClientProvider client={client}>
@@ -30,7 +31,7 @@ root.render(
         </AlertContextProvider>
       </QueryClientProvider>
     </RecoilRoot>
-  </>,
+  </React.StrictMode>,
 );
 
 reportWebVitals();

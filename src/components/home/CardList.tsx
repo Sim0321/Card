@@ -26,6 +26,7 @@ function CardList() {
         // console.log('snapshot ::', snapshot);
         return snapshot.lastVisible;
       },
+      suspense: true,
     },
   );
 
