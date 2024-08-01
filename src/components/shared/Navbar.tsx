@@ -8,6 +8,7 @@ import Button from '@shared/Button';
 import { colors } from '@styles/colorPalette';
 import useUser from '@hooks/auth/useUser';
 import { auth } from '@remote/firebase';
+import MyImage from '../my/MyImage';
 
 function Navbar() {
   const location = useLocation();
@@ -17,14 +18,13 @@ function Navbar() {
 
   const user = useUser();
 
-  const handleLogout = useCallback(() => {
-    signOut(auth);
-    // navigate('/signin');
-  }, []);
-
   const renderButton = useCallback(() => {
     if (user != null) {
-      return <Button onClick={handleLogout}>로그아웃</Button>;
+      return (
+        <Link to="/my">
+          <MyImage size={40} />
+        </Link>
+      );
     }
 
     if (showSignButton) {
@@ -36,7 +36,7 @@ function Navbar() {
     }
 
     return null;
-  }, [user, showSignButton, handleLogout]);
+  }, [user, showSignButton]);
 
   // console.log('user', user);
 
