@@ -5,6 +5,7 @@ import { ApplyValues, APPLY_STATUS } from '@/models/apply';
 import { useEffect, useState } from 'react';
 import useUser from '@/hooks/auth/useUser';
 import { useParams } from 'react-router-dom';
+import ProgressBar from '@shared/Progressbar';
 
 const Apply = ({
   onSubmit,
@@ -13,6 +14,8 @@ const Apply = ({
 }) => {
   const user = useUser();
   const { id } = useParams() as { id: string };
+
+  const LAST_STEP = 3;
 
   const storageKey = `applied-${user?.uid}-${id}`;
 
@@ -81,6 +84,7 @@ const Apply = ({
 
   return (
     <div>
+      <ProgressBar progress={(applyValues.step as number) / LAST_STEP} />
       {applyValues.step === 0 && <Terms onNext={handleTermsChange} />}
       {applyValues.step === 1 && <BasicInfo onNext={handleBasicInfoChange} />}
       {applyValues.step === 2 && <CardInfo onNext={handleCardInfoChange} />}
