@@ -41,6 +41,7 @@ const Terms = ({
     },
     [],
   );
+
   return (
     <div>
       <Agreement>
